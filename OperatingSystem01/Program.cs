@@ -53,6 +53,8 @@ namespace OperatingSystem01
                 cmd = cmd.Trim().ToLower();
                 Console.Write("\n");
 
+
+                //***cd***
                 if (cmd.StartsWith("cd"))
                 {
                     cd = cmd.Split(' ');
@@ -92,6 +94,7 @@ namespace OperatingSystem01
                     }
 
                 }
+                //***read***
                 else if (cmd.StartsWith("read"))
                 {
                     read = cmd.Split(' ');
@@ -133,7 +136,7 @@ namespace OperatingSystem01
                         Console.WriteLine("Command is wrong.");
                     }
                 }
-
+                //***mkdir***md***makedirectory***
                 else if (cmd.StartsWith("mkdir") || cmd.StartsWith("md") || cmd.StartsWith("makedirectory"))
                 {
                     mkdir = cmd.Split(' ');
@@ -176,7 +179,7 @@ namespace OperatingSystem01
                         Console.WriteLine("Command is wrong.");
                     }
                 }
-
+                //***touch***
                 else if (cmd.StartsWith("touch"))
                 {
                     touch = cmd.Split(' ');
@@ -227,7 +230,7 @@ namespace OperatingSystem01
                         Console.WriteLine("Input is wrong.");
                     }
                 }
-
+                ///***ls***
                 else if (cmd.StartsWith("ls"))
                 {
                     showFilesAndFolders = cmd.Split(' ');
