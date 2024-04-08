@@ -3,14 +3,14 @@ using System.IO;
 using System.Diagnostics;
 using System.Globalization;
 
-namespace OperatingSystem01
+namespace PersonalOperatingSystem
 {
     class Program
     {
         static void Main()
         {
-            string[] cd, read, mkdir, touch, showFilesAndFolders, directories, files;
-            string path, cmd, userName, machineName, fileReadPath, fileRead, dirMake, fileMake, ls;
+            string[] cd, read, mkdir, touch, showFilesAndFolders, directories, files, delFile;
+            string path, cmd, userName, machineName, fileReadPath, fileRead, dirMake, fileMake, ls, delFilePath;
 
             userName = Environment.UserName;
             machineName = Environment.MachineName;
@@ -230,7 +230,55 @@ namespace OperatingSystem01
                         Console.WriteLine("Input is wrong.");
                     }
                 }
-                ///***ls***
+                //***delfile***
+                else if (cmd.StartsWith("delfile"))
+                {
+                    delFile = cmd.Split(' ');
+
+                    if (delFile.Length == 2)
+                    {
+                        for (int q = 0; q < delFile.Length; q++)
+                        {
+                            if (q == 0)
+                            {
+                                cmd = delFile[q];
+                            }
+                            else if (q == 1)
+                            {
+                                delFilePath = path + @"\" + delFile[q];
+
+                                if (File.Exists(delFilePath))
+                                {
+                                    try
+                                    {
+                                        File.Delete(delFilePath);
+                                    }
+                                    catch
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("Failed to delete file.");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("File not found.");
+                                }
+                            }
+                        }
+                    }
+                    else if (delFile.Length == 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("delfile <filename>");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Input is wrong.");
+                    }
+                }
+                //***ls***
                 else if (cmd.StartsWith("ls"))
                 {
                     showFilesAndFolders = cmd.Split(' ');
@@ -372,6 +420,15 @@ namespace OperatingSystem01
 
                         break;
 
+                    case "delfile":
+
+                        break;
+
+                    case "deldir":
+                    case "deldirectory":
+
+                        break;
+
                     case "touch":
 
                         break;
@@ -423,6 +480,8 @@ namespace OperatingSystem01
                         Console.WriteLine("\'cd <path>\' : To change path(use without \'<\' and \'>\').");
                         Console.WriteLine("\'read <filename>\' : To read text files(use without \'<\' and \'>\').");
                         Console.WriteLine("\'mkdir <foldername>\' : To make a directory(use without \'<\' and \'>\').");
+                        Console.WriteLine("\'delfile <foldername>\' : To delete a file(use without \'<\' and \'>\').");
+                        Console.WriteLine("\'deldir <foldername>\' : To delete a directory(use without \'<\' and \'>\').");
                         Console.WriteLine("\'touch <filename>\' : To make a file(use without \'<\' and \'>\').");
                         Console.WriteLine("\'ls\' : To show files and directories.");
                         Console.WriteLine("\'date\' : To show date of your system.");
