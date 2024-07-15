@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -112,8 +113,16 @@ namespace PersonalOperatingSystem
                                 fileReadPath = path + '\\' + read[j];
                                 if (File.Exists(fileReadPath))
                                 {
-                                    fileRead = File.ReadAllText(fileReadPath);
-                                    Console.WriteLine(fileRead);
+                                    try
+                                    {
+                                        fileRead = File.ReadAllText(fileReadPath);
+                                        Console.WriteLine(fileRead);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine(ex.Message);
+                                    }
                                 }
                                 else
                                 {
@@ -449,6 +458,17 @@ namespace PersonalOperatingSystem
 
                         break;
 
+                    case "ip":
+
+                        var ips = (Dns.GetHostEntry(Dns.GetHostName()).AddressList);
+
+                        foreach (var ip in ips)
+                        {
+                            Console.WriteLine(ip.ToString());
+                        }
+
+                        break;
+
                     case "cls":
                     case "clear":
 
@@ -486,6 +506,7 @@ namespace PersonalOperatingSystem
                         Console.WriteLine("\'ls\' : To show files and directories.");
                         Console.WriteLine("\'date\' : To show date of your system.");
                         Console.WriteLine("\'time\' : To show time of your system.");
+                        Console.WriteLine("\'ip\' : To show IP list of your system.");
                         Console.WriteLine("\'cls\' or \'clear\' : To clear and refresh window.");
                         Console.WriteLine("\'exit\' : To close this window.");
                         Console.WriteLine("\'shutdown\' : To shutdown your computer.");
