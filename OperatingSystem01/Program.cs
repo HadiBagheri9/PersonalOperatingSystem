@@ -10,12 +10,12 @@ namespace PersonalOperatingSystem
     {
         static void Main()
         {
-            string[] cd, read, mkdir, touch, showFilesAndFolders, directories, files, delFile;
-            string path, cmd, userName, machineName, fileReadPath, fileRead, dirMake, fileMake, ls, delFilePath;
+            
 
-            userName = Environment.UserName;
-            machineName = Environment.MachineName;
-            path = $@"C:\Users\{userName}";
+
+            Vars.userName = Environment.UserName;
+            Vars.machineName = Environment.MachineName;
+            Vars.path = $@"C:\Users\{Vars.userName}";
 
             //Console.WriteLine("Hadi's personal virtual OS");
             Console.WriteLine(@" ____  ____       _       ______   _____  ");
@@ -34,11 +34,11 @@ namespace PersonalOperatingSystem
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.Write("(");
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write($"{userName}");
+                Console.Write($"{Vars.userName}");
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.Write("@");
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write($"{machineName}");
+                Console.Write($"{Vars.machineName}");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.Write(")");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -46,7 +46,7 @@ namespace PersonalOperatingSystem
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write("[");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write($"{path}");
+                Console.Write($"{Vars.path}");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write("]");
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -56,73 +56,36 @@ namespace PersonalOperatingSystem
                 //Console.Write("\n");
 
                 Console.ResetColor();
-                cmd = Console.ReadLine();
-                cmd = cmd.Trim().ToLower();
+                Vars.cmd = Console.ReadLine();
+                Vars.cmd = Vars.cmd.Trim().ToLower();
                 Console.Write("\n");
 
 
                 //***cd***
-                if (cmd.StartsWith("cd"))
-                {
-                    cd = cmd.Split(' ');
+                Cd._Cd(ref Vars.cmd);
 
-                    if (cd.Length == 2)
-                    {
-                        for (int i = 0; i < cd.Length; i++)
-                        {
-                            if (i == 0)
-                            {
-                                cmd = cd[i];
-                            }
-                            else if (i == 1)
-                            {
-                                if (Directory.Exists(cd[i]))
-                                {
-                                    path = cd[i];
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine($"Path [{cd[i]}] is wrong.");
-                                }
-                            }
-                        }
-                    }
-                    else if (cd.Length == 1)
-                    {
-                        Console.ForegroundColor = ConsoleColor.DarkGray;
-                        Console.WriteLine("cd <path>");
-                    }
-
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Command is wrong.");
-                    }
-
-                }
                 //***read***
-                else if (cmd.StartsWith("read"))
+                if (Vars.cmd.StartsWith("read"))
                 {
-                    read = cmd.Split(' ');
-                    if (read.Length == 2)
+                    Vars.read = Vars.cmd.Split(' ');
+                    if (Vars.read.Length == 2)
                     {
-                        for (int j = 0; j < read.Length; j++)
+                        for (int j = 0; j < Vars.read.Length; j++)
                         {
                             if (j == 0)
                             {
-                                cmd = read[j];
+                                Vars.cmd = Vars.read[j];
                             }
 
                             if (j == 1)
                             {
-                                fileReadPath = path + '\\' + read[j];
-                                if (File.Exists(fileReadPath))
+                                Vars.fileReadPath = Vars.path + '\\' + Vars.read[j];
+                                if (File.Exists(Vars.fileReadPath))
                                 {
                                     try
                                     {
-                                        fileRead = File.ReadAllText(fileReadPath);
-                                        Console.WriteLine(fileRead);
+                                        Vars.fileRead = File.ReadAllText(Vars.fileReadPath);
+                                        Console.WriteLine(Vars.fileRead);
                                     }
                                     catch (Exception ex)
                                     {
@@ -133,13 +96,13 @@ namespace PersonalOperatingSystem
                                 else
                                 {
                                     Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine($"File name [{read[j]}] is wrong.");
+                                    Console.WriteLine($"File name [{Vars.read[j]}] is wrong.");
                                 }
                             }
                         }
                     }
 
-                    else if (read.Length == 1)
+                    else if (Vars.read.Length == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("read <filename>");
@@ -152,24 +115,24 @@ namespace PersonalOperatingSystem
                     }
                 }
                 //***mkdir***md***makedirectory***
-                else if (cmd.StartsWith("mkdir") || cmd.StartsWith("md") || cmd.StartsWith("makedirectory"))
+                else if (Vars.cmd.StartsWith("mkdir") || Vars.cmd.StartsWith("md") || Vars.cmd.StartsWith("makedirectory"))
                 {
-                    mkdir = cmd.Split(' ');
-                    if (mkdir.Length == 2)
+                    Vars.mkdir = Vars.cmd.Split(' ');
+                    if (Vars.mkdir.Length == 2)
                     {
-                        for (int k = 0; k < mkdir.Length; k++)
+                        for (int k = 0; k < Vars.mkdir.Length; k++)
                         {
                             if (k == 0)
                             {
-                                cmd = mkdir[k];
+                                Vars.cmd = Vars.mkdir[k];
                             }
 
                             else if (k == 1)
                             {
-                                dirMake = path + "\\" + mkdir[1];
+                                Vars.dirMake = Vars.path + "\\" + Vars.mkdir[1];
                                 try
                                 {
-                                    Directory.CreateDirectory(dirMake);
+                                    Directory.CreateDirectory(Vars.dirMake);
                                 }
                                 catch
                                 {
@@ -180,7 +143,7 @@ namespace PersonalOperatingSystem
                         }
                     }
 
-                    else if (mkdir.Length == 1)
+                    else if (Vars.mkdir.Length == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("md <foldername>");
@@ -195,26 +158,26 @@ namespace PersonalOperatingSystem
                     }
                 }
                 //***touch***
-                else if (cmd.StartsWith("touch"))
+                else if (Vars.cmd.StartsWith("touch"))
                 {
-                    touch = cmd.Split(' ');
-                    if (touch.Length == 2)
+                    Vars.touch = Vars.cmd.Split(' ');
+                    if (Vars.touch.Length == 2)
                     {
-                        for (int n = 0; n < touch.Length; n++)
+                        for (int n = 0; n < Vars.touch.Length; n++)
                         {
                             if (n == 0)
                             {
-                                cmd = touch[n];
+                                Vars.cmd = Vars.touch[n];
                             }
 
                             else if (n == 1)
                             {
-                                fileMake = path + "\\" + touch[n];
-                                if (File.Exists(fileMake) == false)
+                                Vars.fileMake = Vars.path + "\\" + Vars.touch[n];
+                                if (File.Exists(Vars.fileMake) == false)
                                 {
                                     try
                                     {
-                                        File.WriteAllText(fileMake, "\0");
+                                        File.WriteAllText(Vars.fileMake, "\0");
                                     }
                                     catch
                                     {
@@ -232,7 +195,7 @@ namespace PersonalOperatingSystem
                         }
                     }
 
-                    else if (touch.Length == 1)
+                    else if (Vars.touch.Length == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("touch <filename>");
@@ -246,27 +209,27 @@ namespace PersonalOperatingSystem
                     }
                 }
                 //***delfile***
-                else if (cmd.StartsWith("delfile"))
+                else if (Vars.cmd.StartsWith("delfile"))
                 {
-                    delFile = cmd.Split(' ');
+                    Vars.delFile = Vars.cmd.Split(' ');
 
-                    if (delFile.Length == 2)
+                    if (Vars.delFile.Length == 2)
                     {
-                        for (int q = 0; q < delFile.Length; q++)
+                        for (int q = 0; q < Vars.delFile.Length; q++)
                         {
                             if (q == 0)
                             {
-                                cmd = delFile[q];
+                                Vars.cmd = Vars.delFile[q];
                             }
                             else if (q == 1)
                             {
-                                delFilePath = path + @"\" + delFile[q];
+                                Vars.delFilePath = Vars.path + @"\" + Vars.delFile[q];
 
-                                if (File.Exists(delFilePath))
+                                if (File.Exists(Vars.delFilePath))
                                 {
                                     try
                                     {
-                                        File.Delete(delFilePath);
+                                        File.Delete(Vars.delFilePath);
                                     }
                                     catch
                                     {
@@ -282,7 +245,7 @@ namespace PersonalOperatingSystem
                             }
                         }
                     }
-                    else if (delFile.Length == 1)
+                    else if (Vars.delFile.Length == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("delfile <filename>");
@@ -294,24 +257,24 @@ namespace PersonalOperatingSystem
                     }
                 }
                 //***ls***
-                else if (cmd.StartsWith("ls"))
+                else if (Vars.cmd.StartsWith("ls"))
                 {
-                    showFilesAndFolders = cmd.Split(' ');
+                    Vars.showFilesAndFolders = Vars.cmd.Split(' ');
 
-                    if (showFilesAndFolders.Length == 2)
+                    if (Vars.showFilesAndFolders.Length == 2)
                     {
-                        for (int l = 0; l < showFilesAndFolders.Length; l++)
+                        for (int l = 0; l < Vars.showFilesAndFolders.Length; l++)
                         {
                             if (l == 0)
                             {
-                                cmd = showFilesAndFolders[l];
+                                Vars.cmd = Vars.showFilesAndFolders[l];
                             }
 
-                            else if (l == 1) { 
-                            
-                                ls = showFilesAndFolders[l];
+                            else if (l == 1) {
 
-                                if (ls.CompareTo("-h") == 0/* || ls.CompareTo("-H") == 0*/)
+                                Vars.ls = Vars.showFilesAndFolders[l];
+
+                                if (Vars.ls.CompareTo("-h") == 0/* || ls.CompareTo("-H") == 0*/)
                                 {
                                     Console.ForegroundColor = ConsoleColor.DarkGray;
                                     Console.WriteLine("ls <secend CMD> : Custom working");
@@ -322,11 +285,11 @@ namespace PersonalOperatingSystem
                                     Console.WriteLine("<-fc> : Show name of files + Show Creation time.");
                                 }
 
-                                else if (ls.CompareTo("-d") == 0 /*|| ls.CompareTo("-D") == 0*/)
+                                else if (Vars.ls.CompareTo("-d") == 0 /*|| ls.CompareTo("-D") == 0*/)
                                 {
-                                    directories = Directory.GetDirectories(path);
+                                    Vars.directories = Directory.GetDirectories(Vars.path);
 
-                                    foreach (string directory in directories)
+                                    foreach (string directory in Vars.directories)
                                     {
                                         DirectoryInfo directoryInfo = new DirectoryInfo(directory);
 
@@ -335,11 +298,11 @@ namespace PersonalOperatingSystem
                                     }
                                 }
 
-                                else if (ls.CompareTo("-f") == 0)
+                                else if (Vars.ls.CompareTo("-f") == 0)
                                 {
-                                    files = Directory.GetFiles(path);
+                                    Vars.files = Directory.GetFiles(Vars.path);
 
-                                    foreach (string file in files)
+                                    foreach (string file in Vars.files)
                                     {
                                         FileInfo fileInfo = new FileInfo(file);
 
@@ -348,11 +311,11 @@ namespace PersonalOperatingSystem
                                     }
                                 }
 
-                                else if (ls.CompareTo("-dc") == 0 /*|| ls.CompareTo("-D") == 0*/)
+                                else if (Vars.ls.CompareTo("-dc") == 0 /*|| ls.CompareTo("-D") == 0*/)
                                 {
-                                    directories = Directory.GetDirectories(path);
+                                    Vars.directories = Directory.GetDirectories(Vars.path);
 
-                                    foreach (string directory in directories)
+                                    foreach (string directory in Vars.directories)
                                     {
                                         DirectoryInfo directoryInfo = new DirectoryInfo(directory);
 
@@ -361,11 +324,11 @@ namespace PersonalOperatingSystem
                                     }
                                 }
 
-                                else if (ls.CompareTo("-fc") == 0)
+                                else if (Vars.ls.CompareTo("-fc") == 0)
                                 {
-                                    files = Directory.GetFiles(path);
+                                    Vars.files = Directory.GetFiles(Vars.path);
 
-                                    foreach (string file in files)
+                                    foreach (string file in Vars.files)
                                     {
                                         FileInfo fileInfo = new FileInfo(file);
 
@@ -383,21 +346,21 @@ namespace PersonalOperatingSystem
                         }
                     }
 
-                    else if (showFilesAndFolders.Length == 1)
+                    else if (Vars.showFilesAndFolders.Length == 1)
                     {
-                        try { 
-                        
-                        
-                            directories = Directory.GetDirectories(path);
-                            files = Directory.GetFiles(path);
+                        try {
 
-                            foreach (string directory in directories)
+
+                            Vars.directories = Directory.GetDirectories(Vars.path);
+                            Vars.files = Directory.GetFiles(Vars.path);
+
+                            foreach (string directory in Vars.directories)
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                                 Console.WriteLine(directory);
                             }
 
-                            foreach (string file in files)
+                            foreach (string file in Vars.files)
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                                 Console.WriteLine(file);
@@ -419,7 +382,7 @@ namespace PersonalOperatingSystem
 
                 Console.ResetColor();
 
-                switch (cmd)
+                switch (Vars.cmd)
                 {
                     case "cd":
 
