@@ -17,7 +17,13 @@ namespace PersonalOperatingSystem
             machineName = Environment.MachineName;
             path = $@"C:\Users\{userName}";
 
-            Console.WriteLine("Hadi's personal virtual OS");
+            //Console.WriteLine("Hadi's personal virtual OS");
+            Console.WriteLine(@" ____  ____       _       ______   _____  ");
+            Console.WriteLine(@"|_   ||   _|     / \     |_   _ `.|_   _| ");
+            Console.WriteLine(@"  | |__| |      / _ \      | | `. \ | |   ");
+            Console.WriteLine(@"  |  __  |     / ___ \     | |  | | | |   ");
+            Console.WriteLine(@" _| |  | |_  _/ /   \ \_  _| |_.' /_| |_  ");
+            Console.WriteLine(@"|____||____||____| |____||______.'|_____| ");
 
             while (true)
             {
