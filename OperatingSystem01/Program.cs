@@ -57,12 +57,16 @@ namespace PersonalOperatingSystem
 
                 Console.ResetColor();
                 Vars.cmd = Console.ReadLine();
-                Vars.cmd = Vars.cmd.Trim().ToLower();
+                Vars.cmd = Vars.cmd.Trim();
+                Vars._cmd = Vars.cmd.Split(' ');
+                Vars._cmd[0] = Vars._cmd[0].ToLower();
+                Vars.cmd = string.Join(" ", Vars._cmd);
+
                 Console.Write("\n");
 
 
                 //***cd***
-                Cd._Cd(ref Vars.cmd);
+                CD.Cd(ref Vars.cmd);
 
                 //***read***
                 if (Vars.cmd.StartsWith("read"))

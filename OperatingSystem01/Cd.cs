@@ -3,9 +3,9 @@ using System.IO;
 
 namespace PersonalOperatingSystem
 {
-    static class Cd
+    static class CD
     {
-        public static void _Cd(ref string cmd)
+        public static void Cd(ref string cmd)
         {
             if (cmd.StartsWith("cd"))
             {
@@ -21,15 +21,31 @@ namespace PersonalOperatingSystem
                         }
                         else if (i == 1)
                         {
-                            if (Directory.Exists(Vars.cd[i]))
+                            if (Vars.cd[i].Contains(":\\") || Vars.cd[i].Contains(":/"))
                             {
-                                Vars.path = Vars.cd[i];
+                                if (Directory.Exists(Vars.cd[i]))
+                                {
+                                    Vars.path = Vars.cd[i];
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Path [{Vars.cd[i]}] is wrong.");
+                                }
                             }
-                            else
+                            else //if (Vars.cd[i].Contains("\\") || Vars.cd[i].Contains("/"))
                             {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"Path [{Vars.cd[i]}] is wrong.");
+                                if (Directory.Exists(Vars.path + "\\" + Vars.cd[i]))
+                                {
+                                    Vars.path = Path.GetFullPath(Vars.path + "\\" + Vars.cd[i]);
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine($"Directory [{Vars.cd[i]}] didn't exist.");
+                                }
                             }
+                            
                         }
                     }
                 }
