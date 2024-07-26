@@ -72,50 +72,10 @@ namespace PersonalOperatingSystem
                 READ.Read(ref Vars.cmd);
 
                 //***mkdir***md***makedirectory***
-                if (Vars.cmd.StartsWith("mkdir") || Vars.cmd.StartsWith("md") || Vars.cmd.StartsWith("makedirectory"))
-                {
-                    Vars.mkdir = Vars.cmd.Split(' ');
-                    if (Vars.mkdir.Length == 2)
-                    {
-                        for (int k = 0; k < Vars.mkdir.Length; k++)
-                        {
-                            if (k == 0)
-                            {
-                                Vars.cmd = Vars.mkdir[k];
-                            }
+                MAKE_DIRECTORY.Make_Directory(ref Vars.cmd);
 
-                            else if (k == 1)
-                            {
-                                Vars.dirMake = Vars.path + "\\" + Vars.mkdir[1];
-                                try
-                                {
-                                    Directory.CreateDirectory(Vars.dirMake);
-                                }
-                                catch
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("This name for directory is used, Try another name.");
-                                }
-                            }
-                        }
-                    }
-
-                    else if (Vars.mkdir.Length == 1)
-                    {
-                        Console.ForegroundColor = ConsoleColor.DarkGray;
-                        Console.WriteLine("md <foldername>");
-                        Console.WriteLine("mkdir <foldername>");
-                        Console.WriteLine("makedirectory <foldername>");
-                    }
-
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Command is wrong.");
-                    }
-                }
                 //***touch***
-                else if (Vars.cmd.StartsWith("touch"))
+                if (Vars.cmd.StartsWith("touch"))
                 {
                     Vars.touch = Vars.cmd.Split(' ');
                     if (Vars.touch.Length == 2)
