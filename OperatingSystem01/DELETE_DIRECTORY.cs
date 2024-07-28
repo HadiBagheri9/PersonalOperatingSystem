@@ -1,51 +1,52 @@
 ﻿using System;
 using System.IO;
+
 namespace PersonalOperatingSystem
 {
-    class DEL_FILE
+    class DELETE_DIRECTORY
     {
-        public static void Del_File(ref string cmd)
+        public static void Delete_Directory(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("delfile"))
+            if (Vars.cmd.StartsWith("deldir") || Vars.cmd.StartsWith("deletedirectory"))
             {
-                Vars.delFile = Vars.cmd.Split(' ');
+                Vars.delDirectory = Vars.cmd.Split(' ');
 
-                if (Vars.delFile.Length == 2)
+                if (Vars.delDirectory.Length == 2)
                 {
-                    for (int q = 0; q < Vars.delFile.Length; q++)
+                    for (int q = 0; q < Vars.delDirectory.Length; q++)
                     {
                         if (q == 0)
                         {
-                            Vars.cmd = Vars.delFile[q];
+                            Vars.cmd = Vars.delDirectory[q];
                         }
                         else if (q == 1)
                         {
-                            Vars.delFilePath = Vars.path + @"\" + Vars.delFile[q];
+                            Vars.delDirectoryPath = Vars.path + @"\" + Vars.delDirectory[q];
 
-                            if (File.Exists(Vars.delFilePath))
+                            if (Directory.Exists(Vars.delDirectoryPath))
                             {
                                 try
                                 {
-                                    File.Delete(Vars.delFilePath);
+                                    Directory.Delete(Vars.delDirectoryPath);
                                 }
                                 catch
                                 {
                                     Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("Failed to delete file.");
+                                    Console.WriteLine("Failed to delete folder.");
                                 }
                             }
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("File not found.");
+                                Console.WriteLine("Folder not found.");
                             }
                         }
                     }
                 }
-                else if (Vars.delFile.Length == 1)
+                else if (Vars.delDirectory.Length == 1)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("delfile <filename>");
+                    Console.WriteLine("deldir <foldername>");
                 }
                 else
                 {

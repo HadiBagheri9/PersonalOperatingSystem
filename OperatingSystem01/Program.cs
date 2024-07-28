@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Net;
 using System.Diagnostics;
 using System.Globalization;
@@ -78,7 +77,10 @@ namespace PersonalOperatingSystem
                 TOUCH.Touch(ref Vars.cmd);
 
                 //***delfile***
-                DEL_FILE.Del_File(ref Vars.cmd);
+                DELETE_FILE.Del_File(ref Vars.cmd);
+
+                //***deldir***
+                DELETE_DIRECTORY.Delete_Directory(ref Vars.cmd);
 
                 //***ls***
                 LS.Ls(ref Vars.cmd);
@@ -102,11 +104,12 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "delfile":
+                    case "deletefile":
 
                         break;
 
                     case "deldir":
-                    case "deldirectory":
+                    case "deletedirectory":
 
                         break;
 
