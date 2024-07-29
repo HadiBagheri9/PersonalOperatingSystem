@@ -52,6 +52,7 @@
     <Compile Include="DELETE_DIRECTORY.cs" />
     <Compile Include="DELETE_FILE.cs" />
     <Compile Include="EXIT.cs" />
+    <Compile Include="HELP.cs" />
     <Compile Include="LS.cs" />
     <Compile Include="MAKE_DIRECTORY.cs" />
     <Compile Include="Program.cs" />
