@@ -123,12 +123,9 @@ namespace PersonalOperatingSystem
 
                     case "date":
 
-                        Console.WriteLine(GetDate(DateTime.Now));
-
                         break;
 
                     case "time":
-
 
                         break;
 
@@ -201,18 +198,7 @@ namespace PersonalOperatingSystem
             }
         }
 
-        static string GetDate(DateTime dateTime)
-        {
-            PersianCalendar persianCalendar = new PersianCalendar();
-
-            int dd, mm, yyyy;
-
-            dd = persianCalendar.GetDayOfMonth(dateTime);
-            mm = persianCalendar.GetMonth(dateTime);
-            yyyy = persianCalendar.GetYear(dateTime);
-
-            return $"{yyyy}/{mm}/{dd}";
-        }
+        
 
         
     }
