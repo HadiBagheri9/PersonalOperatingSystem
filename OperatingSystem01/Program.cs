@@ -90,6 +90,9 @@ namespace PersonalOperatingSystem
                 //***time***
                 TIME.Time(ref Vars.cmd);
 
+                //***ip***
+                IP.Ip(ref Vars.cmd);
+
                 //***cls***
                 CLEAR.Clear(ref Vars.cmd);
 
@@ -141,14 +144,6 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "ip":
-
-                        var ips = (Dns.GetHostEntry(Dns.GetHostName()).AddressList);
-
-                        foreach (var ip in ips)
-                        {
-                            Console.WriteLine(ip.ToString());
-                        }
-
                         break;
 
                     case "cls":
