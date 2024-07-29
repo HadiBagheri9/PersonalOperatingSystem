@@ -96,6 +96,15 @@ namespace PersonalOperatingSystem
                 //***exit***
                 EXIT.Exit(ref Vars.cmd);
 
+                //***shutdown***
+                SHUTDOWN.Shutdown(ref Vars.cmd);
+
+                //***restart***
+                RESTART.Restart(ref Vars.cmd);
+
+                //***help***
+                HELP.Help(ref Vars.cmd);
+
                 Console.ResetColor();
 
                 switch (Vars.cmd)
@@ -150,15 +159,9 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "shutdown":
-
-                        Process.Start("ShutDown", "/s");
-
                         break;
 
                     case "restart":
-
-                        
-
                         break;
 
                     case "help":
