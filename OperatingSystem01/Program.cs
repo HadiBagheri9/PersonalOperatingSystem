@@ -157,7 +157,7 @@ namespace PersonalOperatingSystem
 
                     case "restart":
 
-                        Process.Start("ShutDown", "/r");
+                        
 
                         break;
 

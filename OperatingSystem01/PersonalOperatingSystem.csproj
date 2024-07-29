@@ -58,6 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="READ.cs" />
+    <Compile Include="RESTART.cs" />
     <Compile Include="TIME.cs" />
     <Compile Include="TOUCH.cs" />
     <Compile Include="Vars.cs" />
