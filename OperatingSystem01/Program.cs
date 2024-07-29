@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Diagnostics;
-using System.Globalization;
 
 namespace PersonalOperatingSystem
 {
@@ -85,48 +84,48 @@ namespace PersonalOperatingSystem
                 //***ls***
                 LS.Ls(ref Vars.cmd);
 
+                //***date***
+                DATE.Date(ref Vars.cmd);
+
+                //***time***
+                TIME.Time(ref Vars.cmd);
+
+                //***exit***
+                EXIT.Exit(ref Vars.cmd);
+
                 Console.ResetColor();
 
                 switch (Vars.cmd)
                 {
                     case "cd":
-
                         break;
 
                     case "read":
-
                         break;
 
                     case "md":
                     case "mkdir":
                     case "makedirectory":
-
                         break;
 
                     case "delfile":
                     case "deletefile":
-
                         break;
 
                     case "deldir":
                     case "deletedirectory":
-
                         break;
 
                     case "touch":
-
                         break;
 
                     case "ls":
-
                         break;
 
                     case "date":
-
                         break;
 
                     case "time":
-
                         break;
 
                     case "ip":
@@ -142,15 +141,9 @@ namespace PersonalOperatingSystem
 
                     case "cls":
                     case "clear":
-
-                        Console.Clear();
-
                         break;
 
                     case "exit":
-
-                        Environment.Exit(0);
-
                         break;
 
                     case "shutdown":
