@@ -90,6 +90,9 @@ namespace PersonalOperatingSystem
                 //***time***
                 TIME.Time(ref Vars.cmd);
 
+                //***cls***
+                CLEAR.Clear(ref Vars.cmd);
+
                 //***exit***
                 EXIT.Exit(ref Vars.cmd);
 

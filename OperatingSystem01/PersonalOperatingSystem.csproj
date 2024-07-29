@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD.cs" />
+    <Compile Include="CLEAR.cs" />
     <Compile Include="DATE.cs" />
     <Compile Include="DELETE_DIRECTORY.cs" />
     <Compile Include="DELETE_FILE.cs" />
