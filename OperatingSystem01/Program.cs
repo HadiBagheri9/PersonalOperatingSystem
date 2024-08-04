@@ -61,6 +61,9 @@ namespace PersonalOperatingSystem
                 Vars.cmd = string.Join(" ", Vars._cmd);
 
                 Console.Write("\n");
+                
+
+                //Multiple prompts
 
 
                 //***cd***
@@ -75,6 +78,9 @@ namespace PersonalOperatingSystem
                 //***touch***
                 TOUCH.Touch(ref Vars.cmd);
 
+                //***write***
+                WRITE.Write(ref Vars.cmd);
+
                 //***delfile***
                 DELETE_FILE.Del_File(ref Vars.cmd);
 
@@ -83,6 +89,10 @@ namespace PersonalOperatingSystem
 
                 //***ls***
                 LS.Ls(ref Vars.cmd);
+
+
+                //Single prompts
+
 
                 //***date***
                 DATE.Date(ref Vars.cmd);
@@ -132,6 +142,9 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "touch":
+                        break;
+
+                    case "write":
                         break;
 
                     case "ls":

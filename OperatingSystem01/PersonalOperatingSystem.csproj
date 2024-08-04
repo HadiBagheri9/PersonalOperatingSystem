@@ -64,6 +64,7 @@
     <Compile Include="TIME.cs" />
     <Compile Include="TOUCH.cs" />
     <Compile Include="Vars.cs" />
+    <Compile Include="WRITE.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
