@@ -13,17 +13,17 @@ namespace PersonalOperatingSystem
 
                 if (Vars.showFilesAndFolders.Length == 2)
                 {
-                    for (int l = 0; l < Vars.showFilesAndFolders.Length; l++)
+                    for (int i = 0; i < Vars.showFilesAndFolders.Length; i++)
                     {
-                        if (l == 0)
+                        if (i == 0)
                         {
-                            Vars.cmd = Vars.showFilesAndFolders[l];
+                            Vars.cmd = Vars.showFilesAndFolders[i];
                         }
 
-                        else if (l == 1)
+                        else if (i == 1)
                         {
 
-                            Vars.ls = Vars.showFilesAndFolders[l];
+                            Vars.ls = Vars.showFilesAndFolders[i];
 
                             if (Vars.ls.CompareTo("-h") == 0/* || ls.CompareTo("-H") == 0*/)
                             {

@@ -12,15 +12,15 @@ namespace PersonalOperatingSystem
 
                 if (Vars.delFile.Length == 2)
                 {
-                    for (int q = 0; q < Vars.delFile.Length; q++)
+                    for (int i = 0; i < Vars.delFile.Length; i++)
                     {
-                        if (q == 0)
+                        if (i == 0)
                         {
-                            Vars.cmd = Vars.delFile[q];
+                            Vars.cmd = Vars.delFile[i];
                         }
-                        else if (q == 1)
+                        else if (i == 1)
                         {
-                            Vars.delFilePath = Vars.path + @"\" + Vars.delFile[q];
+                            Vars.delFilePath = Vars.path + @"\" + Vars.delFile[i];
 
                             if (File.Exists(Vars.delFilePath))
                             {

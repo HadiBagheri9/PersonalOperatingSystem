@@ -12,16 +12,16 @@ namespace PersonalOperatingSystem
                 Vars.touch = Vars.cmd.Split(' ');
                 if (Vars.touch.Length == 2)
                 {
-                    for (int n = 0; n < Vars.touch.Length; n++)
+                    for (int i = 0; i < Vars.touch.Length; i++)
                     {
-                        if (n == 0)
+                        if (i == 0)
                         {
-                            Vars.cmd = Vars.touch[n];
+                            Vars.cmd = Vars.touch[i];
                         }
 
-                        else if (n == 1)
+                        else if (i == 1)
                         {
-                            Vars.fileMake = Vars.path + "\\" + Vars.touch[n];
+                            Vars.fileMake = Vars.path + "\\" + Vars.touch[i];
                             if (File.Exists(Vars.fileMake) == false)
                             {
                                 try

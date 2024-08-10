@@ -13,15 +13,15 @@ namespace PersonalOperatingSystem
 
                 if (Vars.delDirectory.Length == 2)
                 {
-                    for (int q = 0; q < Vars.delDirectory.Length; q++)
+                    for (int i = 0; i < Vars.delDirectory.Length; i++)
                     {
-                        if (q == 0)
+                        if (i == 0)
                         {
-                            Vars.cmd = Vars.delDirectory[q];
+                            Vars.cmd = Vars.delDirectory[i];
                         }
-                        else if (q == 1)
+                        else if (i == 1)
                         {
-                            Vars.delDirectoryPath = Vars.path + @"\" + Vars.delDirectory[q];
+                            Vars.delDirectoryPath = Vars.path + @"\" + Vars.delDirectory[i];
 
                             if (Directory.Exists(Vars.delDirectoryPath))
                             {

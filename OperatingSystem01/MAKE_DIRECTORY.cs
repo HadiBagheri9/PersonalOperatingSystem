@@ -12,14 +12,14 @@ namespace PersonalOperatingSystem
                 Vars.mkdir = Vars.cmd.Split(' ');
                 if (Vars.mkdir.Length == 2)
                 {
-                    for (int k = 0; k < Vars.mkdir.Length; k++)
+                    for (int i = 0; i < Vars.mkdir.Length; i++)
                     {
-                        if (k == 0)
+                        if (i == 0)
                         {
-                            Vars.cmd = Vars.mkdir[k];
+                            Vars.cmd = Vars.mkdir[i];
                         }
 
-                        else if (k == 1)
+                        else if (i == 1)
                         {
                             Vars.dirMake = Vars.path + "\\" + Vars.mkdir[1];
                             try

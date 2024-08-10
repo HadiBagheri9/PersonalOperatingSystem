@@ -12,16 +12,16 @@ namespace PersonalOperatingSystem
                 Vars.read = Vars.cmd.Split(' ');
                 if (Vars.read.Length == 2)
                 {
-                    for (int j = 0; j < Vars.read.Length; j++)
+                    for (int i = 0; i < Vars.read.Length; i++)
                     {
-                        if (j == 0)
+                        if (i == 0)
                         {
-                            Vars.cmd = Vars.read[j];
+                            Vars.cmd = Vars.read[i];
                         }
 
-                        if (j == 1)
+                        if (i == 1)
                         {
-                            Vars.fileReadPath = Vars.path + '\\' + Vars.read[j];
+                            Vars.fileReadPath = Vars.path + '\\' + Vars.read[i];
                             if (File.Exists(Vars.fileReadPath))
                             {
                                 try
@@ -38,7 +38,7 @@ namespace PersonalOperatingSystem
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"File name [{Vars.read[j]}] is wrong.");
+                                Console.WriteLine($"File name [{Vars.read[i]}] is wrong.");
                             }
                         }
                     }

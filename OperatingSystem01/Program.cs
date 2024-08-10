@@ -65,7 +65,6 @@ namespace PersonalOperatingSystem
 
                 //Multiple prompts
 
-
                 //***cd***
                 CD.Cd(ref Vars.cmd);
 
@@ -183,11 +182,8 @@ namespace PersonalOperatingSystem
                         break;
                 }
                 Console.ResetColor();
+
             }
         }
-
-        
-
-        
     }
 }
