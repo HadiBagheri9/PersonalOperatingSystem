@@ -72,5 +72,6 @@
   <ItemGroup>
     <Content Include="Hopstarter-Sleek-Xp-Basic-Files.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

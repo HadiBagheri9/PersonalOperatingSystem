@@ -3,7 +3,7 @@ using System.IO;
 
 namespace PersonalOperatingSystem
 {
-    class LS
+    class LS : TIME
     {
         public static void Ls(ref string cmd)
         {
@@ -71,7 +71,7 @@ namespace PersonalOperatingSystem
                                     DirectoryInfo directoryInfo = new DirectoryInfo(directory);
 
                                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                    Console.WriteLine(directoryInfo.Name + "\t\t\t" + directoryInfo.CreationTime);
+                                    Console.WriteLine(directoryInfo.Name + "\t\t\t" + GetDate(directoryInfo.CreationTime) + "\t" + GetTime(directoryInfo.CreationTime));
                                 }
                             }
 
@@ -84,7 +84,7 @@ namespace PersonalOperatingSystem
                                     FileInfo fileInfo = new FileInfo(file);
 
                                     Console.ForegroundColor = ConsoleColor.DarkCyan;
-                                    Console.WriteLine(fileInfo.Name + "\t\t\t" + fileInfo.CreationTime);
+                                    Console.WriteLine(fileInfo.Name + "\t\t\t" + GetDate(fileInfo.CreationTime) + "\t" + GetTime(fileInfo.CreationTime));
                                 }
                             }
 

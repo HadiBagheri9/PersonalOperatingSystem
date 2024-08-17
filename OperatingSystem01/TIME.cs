@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace PersonalOperatingSystem
 {
-    class TIME
+    class TIME : DATE
     {
         public static void Time(ref string cmd)
         {
@@ -14,7 +14,7 @@ namespace PersonalOperatingSystem
         }
 
 
-        private static string GetTime(DateTime dateTime)
+        protected static string GetTime(DateTime dateTime)
         {
             PersianCalendar persianCalendar = new PersianCalendar();
 

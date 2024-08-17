@@ -13,7 +13,7 @@ namespace PersonalOperatingSystem
             }
         }
 
-        static string GetDate(DateTime dateTime)
+        protected static string GetDate(DateTime dateTime)
         {
             PersianCalendar persianCalendar = new PersianCalendar();
 
