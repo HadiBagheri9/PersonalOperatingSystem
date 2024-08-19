@@ -7,7 +7,7 @@ namespace PersonalOperatingSystem
     {
         public static void Read(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("read"))
+            if (cmd.StartsWith("read"))
             {
                 Vars.read = Vars.cmd.Split(' ');
                 if (Vars.read.Length == 2)

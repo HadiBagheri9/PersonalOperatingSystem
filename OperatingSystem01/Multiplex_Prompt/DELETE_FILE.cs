@@ -6,7 +6,7 @@ namespace PersonalOperatingSystem
     {
         public static void Del_File(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("delfile") || Vars.cmd.StartsWith("deletefile"))
+            if (cmd.StartsWith("delfile") || cmd.StartsWith("deletefile"))
             {
                 Vars.delFile = Vars.cmd.Split(' ');
 

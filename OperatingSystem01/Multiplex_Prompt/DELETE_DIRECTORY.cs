@@ -7,7 +7,7 @@ namespace PersonalOperatingSystem
     {
         public static void Delete_Directory(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("deldir") || Vars.cmd.StartsWith("deletedirectory"))
+            if (cmd.StartsWith("deldir") || cmd.StartsWith("deletedirectory"))
             {
                 Vars.delDirectory = Vars.cmd.Split(' ');
 

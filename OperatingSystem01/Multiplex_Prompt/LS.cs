@@ -7,7 +7,7 @@ namespace PersonalOperatingSystem
     {
         public static void Ls(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("ls"))
+            if (cmd.StartsWith("ls"))
             {
                 Vars.showFilesAndFolders = Vars.cmd.Split(' ');
 

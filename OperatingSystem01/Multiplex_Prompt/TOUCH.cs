@@ -7,7 +7,7 @@ namespace PersonalOperatingSystem
     {
         public static void Touch(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("touch"))
+            if (cmd.StartsWith("touch"))
             {
                 Vars.touch = Vars.cmd.Split(' ');
                 if (Vars.touch.Length == 2)

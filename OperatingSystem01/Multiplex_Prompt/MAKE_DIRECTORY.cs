@@ -7,7 +7,7 @@ namespace PersonalOperatingSystem
     {
         public static void Make_Directory(ref string cmd)
         {
-            if (Vars.cmd.StartsWith("mkdir") || Vars.cmd.StartsWith("md") || Vars.cmd.StartsWith("makedirectory"))
+            if (cmd.StartsWith("mkdir") || cmd.StartsWith("md") || cmd.StartsWith("makedirectory"))
             {
                 Vars.mkdir = Vars.cmd.Split(' ');
                 if (Vars.mkdir.Length == 2)
