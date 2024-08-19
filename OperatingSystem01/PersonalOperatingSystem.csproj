@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Multiplex_Prompt\CD.cs" />
+    <Compile Include="Multiplex_Prompt\FILE_INFO.cs" />
     <Compile Include="Single_Prompts\CLEAR.cs" />
     <Compile Include="Single_Prompts\DATE.cs" />
     <Compile Include="Multiplex_Prompt\DELETE_DIRECTORY.cs" />

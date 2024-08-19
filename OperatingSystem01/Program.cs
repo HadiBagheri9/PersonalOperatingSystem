@@ -1,4 +1,5 @@
 ﻿using System;
+using PersonalOperatingSystem.Multiplex_Prompt;
 
 namespace PersonalOperatingSystem
 {
@@ -84,12 +85,14 @@ namespace PersonalOperatingSystem
                 //***deldir***
                 DELETE_DIRECTORY.Delete_Directory(ref Vars.cmd);
 
+                //***fileinfo***
+                FILE_INFO.File_Info(ref Vars.cmd);
+
                 //***ls***
                 LS.Ls(ref Vars.cmd);
 
 
                 //Single prompts
-
 
                 //***date***
                 DATE.Date(ref Vars.cmd);
@@ -136,6 +139,12 @@ namespace PersonalOperatingSystem
 
                     case "deldir":
                     case "deletedirectory":
+                        break;
+
+                    case "fileinfo":
+                        break;
+
+                    case "dirinfo":
                         break;
 
                     case "touch":
