@@ -92,11 +92,12 @@ namespace PersonalOperatingSystem
                 //***dirinfo***
                 Directory_Info.Dir_Info(ref Vars.cmd);
 
-                //***ls***
-                LS.Ls(ref Vars.cmd);
 
 
                 //Single prompts
+
+                //***ls***
+                LS.Ls(ref Vars.cmd);
 
                 //***date***
                 DATE.Date(ref Vars.cmd);

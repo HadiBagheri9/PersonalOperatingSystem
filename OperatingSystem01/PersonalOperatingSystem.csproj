@@ -56,7 +56,7 @@
     <Compile Include="Single_Prompts\EXIT.cs" />
     <Compile Include="Single_Prompts\HELP.cs" />
     <Compile Include="Single_Prompts\IP.cs" />
-    <Compile Include="Multiplex_Prompt\LS.cs" />
+    <Compile Include="Single_Prompts\LS.cs" />
     <Compile Include="Multiplex_Prompt\MAKE_DIRECTORY.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
