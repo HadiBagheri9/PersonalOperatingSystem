@@ -8,7 +8,7 @@ namespace PersonalOperatingSystem
 {
     class Vars
     {
-        public static string[] cd, read, mkdir, touch, showFilesAndFolders, directories, files, delFile, _cmd, delDirectory, write, fileInfo;
-        public static string path, cmd, userName, machineName, fileReadPath, fileRead, dirMake, fileMake, ls, delFilePath, delDirectoryPath, textToWrite, fileName, fileInfos;
+        public static string[] cd, read, mkdir, touch, showFilesAndFolders, directories, files, delFile, _cmd, delDirectory, write, fileInfo, dirInfo;
+        public static string path, cmd, userName, machineName, fileReadPath, fileRead, dirMake, fileMake, ls, delFilePath, delDirectoryPath, textToWrite, fileName, fileInfos, dirInfos, dirName;
     }
 }

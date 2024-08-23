@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using PersonalOperatingSystem.Multiplex_Prompt;
 
 namespace PersonalOperatingSystem
@@ -87,6 +88,9 @@ namespace PersonalOperatingSystem
 
                 //***fileinfo***
                 FILE_INFO.File_Info(ref Vars.cmd);
+
+                //***dirinfo***
+                Directory_Info.Dir_Info(ref Vars.cmd);
 
                 //***ls***
                 LS.Ls(ref Vars.cmd);

@@ -23,9 +23,9 @@ namespace PersonalOperatingSystem.Multiplex_Prompt
                             Vars.fileInfos = string.Format(
                                 $"Name : \t\t\t{fileInfo.Name}\n" +
                                 $"File extension : \t{fileInfo.Extension}\n" +
-                                $"File full name : \t{fileInfo.FullName}\n" +
                                 $"Directory : \t\t{fileInfo.Directory}\n" +
                                 $"Directory name : \t{fileInfo.DirectoryName}\n" +
+                                $"File full name : \t{fileInfo.FullName}\n" +
                                 $"Size : \t\t\t{fileInfo.Length * 1024} KB\n" +
                                 $"Read only : \t\t{fileInfo.IsReadOnly}\n" +
                                 $"Attributes : \t\t{fileInfo.Attributes}\n" +
