@@ -23,6 +23,8 @@ namespace PersonalOperatingSystem
                 Console.WriteLine("\'deldir <foldername>\' : To delete a directory(use without \'<\' and \'>\').");
                 Console.WriteLine("\'fileinfo <filename>\' : To display file informations.");
                 Console.WriteLine("\'dirinfo <dirname>\' : To display directory informations.");
+                Console.WriteLine("\'enctext <16 byte key> <text>\' : To encrypt a text.");
+                Console.WriteLine("\'dctext <16 byte key> <text>\' : To decrypt a text.");
                 Console.WriteLine("\'ls\' : To show files and directories.");
                 Console.WriteLine("\'date\' : To show date of your system.");
                 Console.WriteLine("\'time\' : To show time of your system.");
@@ -32,7 +34,6 @@ namespace PersonalOperatingSystem
                 Console.WriteLine("\'shutdown\' : To shutdown your computer.");
                 Console.WriteLine("\'restart\' : To restart your computer.");
                 Console.WriteLine("\'help\' : To see this message.");
-                Console.WriteLine("\'\' : To");
             }
         }
     }

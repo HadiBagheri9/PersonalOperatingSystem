@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using PersonalOperatingSystem.Multiplex_Prompt;
 
 namespace PersonalOperatingSystem
@@ -92,7 +91,12 @@ namespace PersonalOperatingSystem
                 //***dirinfo***
                 Directory_Info.Dir_Info(ref Vars.cmd);
 
+                //***enctext***
+                ENC_TEXT.Enc_Text(ref Vars.cmd);
 
+                //***dctext***
+                //***encfile***
+                //***dcfile***
 
                 //Single prompts
 
@@ -156,6 +160,9 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "write":
+                        break;
+
+                    case "enctext":
                         break;
 
                     case "ls":

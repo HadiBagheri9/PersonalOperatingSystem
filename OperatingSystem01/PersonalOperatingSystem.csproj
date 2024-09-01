@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Multiplex_Prompt\CD.cs" />
+    <Compile Include="Multiplex_Prompt\DC_FILE.cs" />
+    <Compile Include="Multiplex_Prompt\DC_TEXT.cs" />
     <Compile Include="Multiplex_Prompt\Directory_Info.cs" />
+    <Compile Include="Multiplex_Prompt\ENC_FILE.cs" />
+    <Compile Include="Multiplex_Prompt\ENC_TEXT.cs" />
     <Compile Include="Multiplex_Prompt\FILE_INFO.cs" />
     <Compile Include="Single_Prompts\CLEAR.cs" />
     <Compile Include="Single_Prompts\DATE.cs" />
