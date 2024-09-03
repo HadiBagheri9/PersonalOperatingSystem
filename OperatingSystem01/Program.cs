@@ -138,6 +138,12 @@ namespace PersonalOperatingSystem
 
                 switch (Vars.cmd)
                 {
+                    case "":
+                        break;
+
+                    case "\n":
+                        break;
+
                     case "cd":
                         break;
 
