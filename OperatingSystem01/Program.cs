@@ -7,7 +7,7 @@ namespace PersonalOperatingSystem
     {
         static void Main()
         {
-            
+
 
 
             Vars.userName = Environment.UserName;
@@ -60,7 +60,7 @@ namespace PersonalOperatingSystem
                 Vars.cmd = string.Join(" ", Vars._cmd);
 
                 Console.Write("\n");
-                
+
 
                 //Multiple prompts
 
@@ -95,8 +95,15 @@ namespace PersonalOperatingSystem
                 ENC_TEXT.Enc_Text(ref Vars.cmd);
 
                 //***dctext***
+                DC_TEXT.Dc_Text(ref Vars.cmd);
+
                 //***encfile***
+
+
                 //***dcfile***
+
+
+
 
                 //Single prompts
 
@@ -163,6 +170,15 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "enctext":
+                        break;
+
+                    case "dctext":
+                        break;
+
+                    case "encfile":
+                        break;
+
+                    case "dcfile":
                         break;
 
                     case "ls":

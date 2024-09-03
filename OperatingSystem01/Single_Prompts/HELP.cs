@@ -18,13 +18,13 @@ namespace PersonalOperatingSystem
                 Console.WriteLine("\'read <filename>\' : To read text files(use without \'<\' and \'>\').");
                 Console.WriteLine("\'mkdir <foldername>\' : To make a directory(use without \'<\' and \'>\').");
                 Console.WriteLine("\'touch <filename>\' : To make a file(use without \'<\' and \'>\').");
-                Console.WriteLine("\'write <filename> <text>\' : To write a text inside a file.");//developing
+                Console.WriteLine("\'write <filename> <text>\' : To write a text inside a file(use without \'<\' and \'>\').");//developing
                 Console.WriteLine("\'delfile <foldername>\' : To delete a file(use without \'<\' and \'>\').");
                 Console.WriteLine("\'deldir <foldername>\' : To delete a directory(use without \'<\' and \'>\').");
-                Console.WriteLine("\'fileinfo <filename>\' : To display file informations.");
-                Console.WriteLine("\'dirinfo <dirname>\' : To display directory informations.");
-                Console.WriteLine("\'enctext <16 byte key> <text>\' : To encrypt a text.");
-                Console.WriteLine("\'dctext <16 byte key> <text>\' : To decrypt a text.");
+                Console.WriteLine("\'fileinfo <filename>\' : To display file informations(use without \'<\' and \'>\').");
+                Console.WriteLine("\'dirinfo <dirname>\' : To display directory informations(use without \'<\' and \'>\').");
+                Console.WriteLine("\'enctext <16 byte key> <text>\' : To encrypt a text(use without \'<\' and \'>\').");
+                Console.WriteLine("\'dctext <16 byte key> <text>\' : To decrypt a text(use without \'<\' and \'>\').");
                 Console.WriteLine("\'ls\' : To show files and directories.");
                 Console.WriteLine("\'date\' : To show date of your system.");
                 Console.WriteLine("\'time\' : To show time of your system.");
