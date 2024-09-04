@@ -49,7 +49,7 @@ namespace PersonalOperatingSystem
 
                         try
                         {
-                            File.AppendAllText(Vars.path+"\\"+Vars.write[1], Vars.textToWrite);
+                            File.AppendAllText(Vars.path+"\\"+Vars.write[1], Vars.textToWrite.Trim());
                         }
                         catch (Exception ex)
                         {
