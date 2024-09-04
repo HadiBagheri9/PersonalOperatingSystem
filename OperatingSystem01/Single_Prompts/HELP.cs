@@ -25,6 +25,8 @@ namespace PersonalOperatingSystem
                 Console.WriteLine("\'dirinfo <dirname>\' : To display directory informations(use without \'<\' and \'>\').");
                 Console.WriteLine("\'enctext <16 byte key> <text>\' : To encrypt a text(use without \'<\' and \'>\').");
                 Console.WriteLine("\'dctext <16 byte key> <text>\' : To decrypt a text(use without \'<\' and \'>\').");
+                Console.WriteLine("\'encfile <16 byte key> <filename>\' : To encrypt text of document files.(use without \'<\' and \'>\').");
+                Console.WriteLine("\'dcfile <16 byte key> <filename>\' : To decrypt text of document files.(use without \'<\' and \'>\').");
                 Console.WriteLine("\'ls\' : To show files and directories.");
                 Console.WriteLine("\'date\' : To show date of your system.");
                 Console.WriteLine("\'time\' : To show time of your system.");

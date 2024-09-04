@@ -98,7 +98,7 @@ namespace PersonalOperatingSystem
                 DC_TEXT.Dc_Text(ref Vars.cmd);
 
                 //***encfile***
-
+                ENC_FILE.Enc_File(ref Vars.cmd);
 
                 //***dcfile***
 
