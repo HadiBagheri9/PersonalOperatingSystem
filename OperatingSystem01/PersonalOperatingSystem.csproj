@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{38B08E3F-A6C5-4005-BAAD-8DEDF3B8368B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PersonalOperatingSystem</RootNamespace>
-    <AssemblyName>PersonalOperatingSystem</AssemblyName>
+    <RootNamespace>HB_Shell</RootNamespace>
+    <AssemblyName>HB_Shell</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -53,6 +53,11 @@
     <Compile Include="Multiplex_Prompt\ENC_FILE.cs" />
     <Compile Include="Multiplex_Prompt\ENC_TEXT.cs" />
     <Compile Include="Multiplex_Prompt\FILE_INFO.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Single_Prompts\CLEAR.cs" />
     <Compile Include="Single_Prompts\DATE.cs" />
     <Compile Include="Multiplex_Prompt\DELETE_DIRECTORY.cs" />
@@ -78,6 +83,11 @@
   <ItemGroup>
     <Content Include="Hopstarter-Sleek-Xp-Basic-Files.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
