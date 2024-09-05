@@ -101,7 +101,7 @@ namespace PersonalOperatingSystem
                 ENC_FILE.Enc_File(ref Vars.cmd);
 
                 //***dcfile***
-
+                DC_FILE.Dc_File(ref Vars.cmd);
 
 
 
