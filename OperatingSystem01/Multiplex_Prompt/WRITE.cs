@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 namespace PersonalOperatingSystem
 {
@@ -43,18 +44,27 @@ namespace PersonalOperatingSystem
                             else
                             {
                                 Vars.textToWrite += " " + Vars.write[i];
-                            }
+                            } 
 
                         }
 
+                        StreamWriter st = null;
+
                         try
                         {
-                            File.AppendAllText(Vars.path+"\\"+Vars.write[1], Vars.textToWrite.Trim());
+                            st = new StreamWriter(Vars.path + "\\" + Vars.write[1], true, Encoding.UTF8);
+                            st.Write(Vars.textToWrite.Trim().Replace("\\n", "\n").Remove(0, 0));
+                            //File.AppendAllText(Vars.path+"\\"+Vars.write[1], Vars.textToWrite.Trim());
                         }
                         catch (Exception ex)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(ex.Message);
+                        }
+                        finally
+                        {
+                            st.Close();
+                            st.Dispose();
                         }
                     }
                     else
