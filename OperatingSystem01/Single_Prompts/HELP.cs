@@ -23,6 +23,8 @@ namespace PersonalOperatingSystem
                 Console.WriteLine("\'deldir <foldername>\' : To delete a directory(use without \'<\' and \'>\').");
                 Console.WriteLine("\'fileinfo <filename>\' : To display file informations(use without \'<\' and \'>\').");
                 Console.WriteLine("\'dirinfo <dirname>\' : To display directory informations(use without \'<\' and \'>\').");
+                Console.WriteLine("\'dirlock <dirname>\' : Close permissions to access a directory(use without \'<\' and \'>\').");
+                Console.WriteLine("\'dirunlock <dirname>\' : Set permissions to access a directory(use without \'<\' and \'>\').");
                 Console.WriteLine("\'enctext <16 byte key> <text>\' : To encrypt a text(use without \'<\' and \'>\').");
                 Console.WriteLine("\'dctext <16 byte key> <text>\' : To decrypt a text(use without \'<\' and \'>\').");
                 Console.WriteLine("\'encfile <16 byte key> <filename>\' : To encrypt text of document files.(use without \'<\' and \'>\').");

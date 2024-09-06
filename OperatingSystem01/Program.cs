@@ -49,7 +49,7 @@ namespace PersonalOperatingSystem
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.Write("==");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Write(">");
+                  Console.Write(">");
                 //Console.Write("\n");
 
                 Console.ResetColor();
@@ -90,6 +90,12 @@ namespace PersonalOperatingSystem
 
                 //***dirinfo***
                 Directory_Info.Dir_Info(ref Vars.cmd);
+
+                //***dirlock***
+
+
+                //***dirunlock
+
 
                 //***enctext***
                 ENC_TEXT.Enc_Text(ref Vars.cmd);
@@ -167,6 +173,12 @@ namespace PersonalOperatingSystem
                         break;
 
                     case "dirinfo":
+                        break;
+
+                    case "dirlock":
+                        break;
+
+                    case "dirunlock":
                         break;
 
                     case "touch":

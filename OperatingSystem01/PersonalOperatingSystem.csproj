@@ -50,9 +50,11 @@
     <Compile Include="Multiplex_Prompt\DC_FILE.cs" />
     <Compile Include="Multiplex_Prompt\DC_TEXT.cs" />
     <Compile Include="Multiplex_Prompt\Directory_Info.cs" />
+    <Compile Include="Multiplex_Prompt\DIRECTORY_LOCK.cs" />
     <Compile Include="Multiplex_Prompt\ENC_FILE.cs" />
     <Compile Include="Multiplex_Prompt\ENC_TEXT.cs" />
     <Compile Include="Multiplex_Prompt\FILE_INFO.cs" />
+    <Compile Include="Parents\DirectoryAccessControl.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
