@@ -6,14 +6,14 @@ namespace HB_Shell.Parents
 {
     class DirectoryAccessControl
     {
-        protected private void LockDirectory(string path)
+        protected private static void LockDirectory(string path)
         {
             DirectorySecurity ds = Directory.GetAccessControl(path);
             FileSystemAccessRule fsar = new FileSystemAccessRule(Environment.UserName, FileSystemRights.FullControl, AccessControlType.Deny);
             ds.AddAccessRule(fsar);
             Directory.SetAccessControl(path, ds);
         }
-        protected private void UnLockDirectory(string path)
+        protected private static void UnLockDirectory(string path)
         {
             DirectorySecurity ds = Directory.GetAccessControl(path);
             FileSystemAccessRule fsar = new FileSystemAccessRule(Environment.UserName, FileSystemRights.FullControl, AccessControlType.Deny);

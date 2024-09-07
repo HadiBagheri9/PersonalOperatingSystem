@@ -1,4 +1,5 @@
 ﻿using System;
+using HB_Shell.Multiplex_Prompt;
 using PersonalOperatingSystem.Multiplex_Prompt;
 
 namespace PersonalOperatingSystem
@@ -92,7 +93,7 @@ namespace PersonalOperatingSystem
                 Directory_Info.Dir_Info(ref Vars.cmd);
 
                 //***dirlock***
-
+                DIRECTORY_LOCK.Directory_Lock(ref Vars.cmd);
 
                 //***dirunlock
 
