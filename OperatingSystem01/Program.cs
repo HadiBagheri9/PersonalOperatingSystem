@@ -96,7 +96,7 @@ namespace PersonalOperatingSystem
                 DIRECTORY_LOCK.Directory_Lock(ref Vars.cmd);
 
                 //***dirunlock
-
+                DIRECTORY_UNLOCK.Directory_UnLock(ref Vars.cmd);
 
                 //***enctext***
                 ENC_TEXT.Enc_Text(ref Vars.cmd);
